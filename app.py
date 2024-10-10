@@ -125,12 +125,12 @@ with tabs[1]:
         
         # Initialize a dictionary to store the results
         results = {}
-       
+        
         # Loop through models and evaluate them without hyperparameter tuning
         for model_name, model in models.items():
             pipeline = create_pipeline(model)
             pipeline.fit(X_train, y_train)
-            
+
             # Introduce randomness to predictions
             y_pred = pipeline.predict(X_test)
             random_indices = np.random.choice(len(y_pred), int(0.1 * len(y_pred)), replace=False)
