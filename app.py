@@ -65,7 +65,7 @@ with tabs[0]:
         
         st.write("Correlation Matrix:")
         corr_matrix = data.corr()
-        st.write(corr_matrix)  # Display the correlation matrix values
+        st.write(corr_matrix)
         fig, ax = plt.subplots()
         sns.heatmap(corr_matrix, annot=True, ax=ax)
         st.pyplot(fig)
@@ -75,7 +75,6 @@ with tabs[0]:
         sns.countplot(x='Anomaly_Label', data=data, ax=ax)
         st.pyplot(fig)
         
-        # Calculate and display percentages
         anomaly_counts = data['Anomaly_Label'].value_counts(normalize=True) * 100
         for label, percentage in anomaly_counts.items():
             st.write(f"Percentage of {label}: {percentage:.2f}%")
@@ -86,8 +85,7 @@ with tabs[0]:
             st.line_chart(data[num_cols])
         else:
             st.write("No numerical features to display.")
-            
-# Display Variable Importance and SHAP Values if available
+
         if st.session_state['feature_importance'] is not None:
             st.write("Variable Importance:")
             st.write(st.session_state['feature_importance'])
