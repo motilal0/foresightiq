@@ -127,11 +127,7 @@ with tabs[1]:
         
         # Initialize a dictionary to store the results
         results = {}
-
-st.write(f"X_train shape: {X_train.shape}, y_train shape: {y_train.shape}")
-st.write(f"Data types of X_train: {X_train.dtypes}")
-
-        
+       
         # Loop through models and evaluate them without hyperparameter tuning
         for model_name, model in models.items():
             pipeline = create_pipeline(model)
