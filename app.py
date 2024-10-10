@@ -102,8 +102,6 @@ with tabs[0]:
             shap.summary_plot(st.session_state['shap_values'], st.session_state['X_train'], show=False)
             st.pyplot(fig)
 
-
-
 # Model Evaluation Tab
 with tabs[1]:
     st.header("Modelling")
